@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 
 #ifdef HAVE_CONFIG_H
 #  include <config.h>
