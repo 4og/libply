@@ -1,0 +1,25 @@
+#ifndef _PLY_CONFIG_HPP
+#define _PLY_CONFIG_HPP 1
+
+/* Author of package */
+#ifndef PLY_PACKAGE_AUTHOR 
+#define PLY_PACKAGE_AUTHOR "@PLY_PACKAGE_AUTHOR@"
+#endif
+
+/* Define to the address where bug reports for this package should be sent. */
+#ifndef PLY_PACKAGE_BUGREPORT 
+#define PLY_PACKAGE_BUGREPORT "@PLY_PACKAGE_BUGREPORT@"
+#endif
+
+/* Define to the full name of this package. */
+#ifndef PLY_PACKAGE_NAME 
+#define PLY_PACKAGE_NAME "@PLY_PACKAGE_NAME@"
+#endif
+
+/* Define to the version of this package. */
+#ifndef PLY_PACKAGE_VERSION 
+#define PLY_PACKAGE_VERSION "@PLY_PACKAGE_VERSION@"
+#endif
+
+/* once: _PLY_CONFIG_HPP */
+#endif
