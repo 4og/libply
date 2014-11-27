@@ -7,10 +7,6 @@
 
 #include <ply.hpp>
 
-#ifdef HAVE_CONFIG_H
-#  include <config.h>
-#endif
-
 using namespace std::placeholders;
 using namespace ply;
 
@@ -347,13 +343,13 @@ int main(int argc, char* argv[])
       std::cout << "\n";
       std::cout << "With no INFILE/OUTFILE, or when INFILE/OUTFILE is -, read standard input/output.\n";
       std::cout << "\n";
-      std::cout << "Report bugs to <" << PACKAGE_BUGREPORT << ">.\n";
+      std::cout << "Report bugs to " << PLY_PACKAGE_BUGREPORT << "\n";
       return EXIT_SUCCESS;
     }
 
     else if ((short_opt == 'v') || (std::strcmp(long_opt, "version") == 0)) {
-      std::cout << "ply2ply (" << PACKAGE_NAME << ") " << PACKAGE_VERSION << "\n";
-      std::cout << "Copyright (C) 2007 " << PACKAGE_AUTHOR << "\n";
+      std::cout << "ply2ply (" << PLY_PACKAGE_NAME << ") " << PLY_PACKAGE_VERSION << "\n";
+      std::cout << "Copyright (C) 2007 " << PLY_PACKAGE_AUTHOR << "\n";
       std::cout << "\n";
       std::cout << "This program is free software; you can redistribute it and/or modify\n";
       std::cout << "it under the terms of the GNU General Public License as published by\n";
