@@ -33,6 +33,7 @@ private:
   void face_vertex_indices_element(ply::int32 vertex_index);
   void face_vertex_indices_end();
   void face_end();
+  void ignore(std::string const& s) { std::cout << "Warning: ignoring element or property: " << s << std::endl; }
   std::ostream* ostream_;
   ply::float32 vertex_x_, vertex_y_, vertex_z_;
   ply::int32 face_vertex_indices_element_index_, face_vertex_indices_first_element_, face_vertex_indices_previous_element_;
@@ -73,7 +74,8 @@ std::tuple<std::function<void()>, std::function<void()> > ply_to_raw_converter::
     );
   }
   else {
-    throw std::runtime_error("ply_to_raw_converter::element_definition_callback(): invalid element_name");
+    std::bind(&ply_to_raw_converter::ignore, this, element_name);
+    //throw std::runtime_error("ply_to_raw_converter::element_definition_callback(): invalid element_name");
   }
 }
 
