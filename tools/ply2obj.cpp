@@ -29,6 +29,9 @@ private:
   void vertex_z(ply::float32 z);
   void vertex_end();
   void face_begin();
+  void ignore(std::string const& s) {
+    // std::cout << "Warning: ignoring element or property: " << s << std::endl; 
+  }
   void face_vertex_indices_begin(ply::uint8 size);
   void face_vertex_indices_element(ply::int32 vertex_index);
   void face_vertex_indices_end();
@@ -92,11 +95,13 @@ std::function<void (ply::float32)> ply_to_obj_converter::scalar_property_definit
       return std::bind(&ply_to_obj_converter::vertex_z, this, _1);
     }
     else {
-      throw std::runtime_error("ply_to_obj_converter::scalar_property_definition_callback(): unknown property_name");
+      return std::bind(&ply_to_obj_converter::ignore, this, property_name);
+      //throw std::runtime_error("ply_to_obj_converter::scalar_property_definition_callback(): unknown property_name");
     }
   }
   else {
-    throw std::runtime_error("ply_to_obj_converter::scalar_property_definition_callback(): unknown element_name");
+    return std::bind(&ply_to_obj_converter::ignore, this, element_name);
+    //throw std::runtime_error("ply_to_obj_converter::scalar_property_definition_callback(): unknown element_name");
   }
 }
 
